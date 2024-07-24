@@ -1,0 +1,340 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1939 ]
+[d frameptr 6 ]
+"68 C:\Users\Michel\MPLABXProjects\testI2C-slave.X\mcc_generated_files/i2c_slave.c
+[e E3076 . `uc
+I2C_IDLE 0
+I2C_ADDR_TX 1
+I2C_ADDR_RX 2
+I2C_DATA_TX 3
+I2C_DATA_RX 4
+]
+"10 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"53 C:\Users\Michel\MPLABXProjects\testI2C-slave.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"97
+[v _I2C_Slave_Init I2C_Slave_Init `(v  1 e 1 0 ]
+"110
+[v _I2C_Slave_Read_Write I2C_Slave_Read_Write `II(v  1 e 1 0 ]
+"108 C:\Users\Michel\MPLABXProjects\testI2C-slave.X\mcc_generated_files/i2c_slave.c
+[v _I2C_Initialize I2C_Initialize `(v  1 e 1 0 ]
+"165
+[v _I2C_Isr I2C_Isr `(v  1 s 1 I2C_Isr ]
+"223
+[v _I2C_SlaveSetIsrHandler I2C_SlaveSetIsrHandler `(v  1 e 1 0 ]
+"229
+[v _I2C_SlaveSetReadIntHandler I2C_SlaveSetReadIntHandler `(v  1 e 1 0 ]
+"233
+[v _I2C_SlaveRdCallBack I2C_SlaveRdCallBack `(v  1 s 1 I2C_SlaveRdCallBack ]
+"241
+[v _I2C_SlaveDefRdInterruptHandler I2C_SlaveDefRdInterruptHandler `(v  1 s 1 I2C_SlaveDefRdInterruptHandler ]
+"246
+[v _I2C_SlaveSetWriteIntHandler I2C_SlaveSetWriteIntHandler `(v  1 e 1 0 ]
+"250
+[v _I2C_SlaveWrCallBack I2C_SlaveWrCallBack `(v  1 s 1 I2C_SlaveWrCallBack ]
+"258
+[v _I2C_SlaveDefWrInterruptHandler I2C_SlaveDefWrInterruptHandler `(v  1 s 1 I2C_SlaveDefWrInterruptHandler ]
+"263
+[v _I2C_SlaveSetAddrIntHandler I2C_SlaveSetAddrIntHandler `(v  1 e 1 0 ]
+"267
+[v _I2C_SlaveAddrCallBack I2C_SlaveAddrCallBack `(v  1 s 1 I2C_SlaveAddrCallBack ]
+"274
+[v _I2C_SlaveDefAddrInterruptHandler I2C_SlaveDefAddrInterruptHandler `(v  1 s 1 I2C_SlaveDefAddrInterruptHandler ]
+"279
+[v _I2C_SlaveSetWrColIntHandler I2C_SlaveSetWrColIntHandler `(v  1 e 1 0 ]
+"291
+[v _I2C_SlaveDefWrColInterruptHandler I2C_SlaveDefWrColInterruptHandler `(v  1 s 1 I2C_SlaveDefWrColInterruptHandler ]
+"295
+[v _I2C_SlaveSetBusColIntHandler I2C_SlaveSetBusColIntHandler `(v  1 e 1 0 ]
+"307
+[v _I2C_SlaveDefBusColInterruptHandler I2C_SlaveDefBusColInterruptHandler `(v  1 s 1 I2C_SlaveDefBusColInterruptHandler ]
+"310
+[v _I2C_SlaveOpen I2C_SlaveOpen `T(a  1 s 1 I2C_SlaveOpen ]
+"323
+[v _I2C_SlaveClose I2C_SlaveClose `T(v  1 s 1 I2C_SlaveClose ]
+"331
+[v _I2C_SlaveSetSlaveAddr I2C_SlaveSetSlaveAddr `T(v  1 s 1 I2C_SlaveSetSlaveAddr ]
+"336
+[v _I2C_SlaveSetSlaveMask I2C_SlaveSetSlaveMask `T(v  1 s 1 I2C_SlaveSetSlaveMask ]
+"341
+[v _I2C_SlaveEnableIrq I2C_SlaveEnableIrq `T(v  1 s 1 I2C_SlaveEnableIrq ]
+"346
+[v _I2C_SlaveIsAddr I2C_SlaveIsAddr `T(a  1 s 1 I2C_SlaveIsAddr ]
+"351
+[v _I2C_SlaveIsRead I2C_SlaveIsRead `T(a  1 s 1 I2C_SlaveIsRead ]
+"356
+[v _I2C_SlaveClearIrq I2C_SlaveClearIrq `T(v  1 s 1 I2C_SlaveClearIrq ]
+"361
+[v _I2C_SlaveReleaseClock I2C_SlaveReleaseClock `T(v  1 s 1 I2C_SlaveReleaseClock ]
+"381
+[v _I2C_SlaveIsTxBufEmpty I2C_SlaveIsTxBufEmpty `T(a  1 s 1 I2C_SlaveIsTxBufEmpty ]
+"386
+[v _I2C_SlaveIsRxBufFull I2C_SlaveIsRxBufFull `T(a  1 s 1 I2C_SlaveIsRxBufFull ]
+"391
+[v _I2C_SlaveSendTxData I2C_SlaveSendTxData `T(v  1 s 1 I2C_SlaveSendTxData ]
+"396
+[v _I2C_SlaveGetRxData I2C_SlaveGetRxData `T(uc  1 s 1 I2C_SlaveGetRxData ]
+"406
+[v _I2C_SlaveSendAck I2C_SlaveSendAck `T(v  1 s 1 I2C_SlaveSendAck ]
+"412
+[v _I2C_SlaveSendNack I2C_SlaveSendNack `T(v  1 s 1 I2C_SlaveSendNack ]
+"50 C:\Users\Michel\MPLABXProjects\testI2C-slave.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"59
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"73
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"55 C:\Users\Michel\MPLABXProjects\testI2C-slave.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"135 C:\Users\Michel\MPLABXProjects\testI2C-slave.X/mcc_generated_files/i2c_slave.h
+[v _MSSP_InterruptHandler MSSP_InterruptHandler `*.37(v  1 e 2 0 ]
+"136
+[v _I2C_SlaveRdInterruptHandler I2C_SlaveRdInterruptHandler `*.37(v  1 e 2 0 ]
+"137
+[v _I2C_SlaveWrInterruptHandler I2C_SlaveWrInterruptHandler `*.37(v  1 e 2 0 ]
+"138
+[v _I2C_SlaveAddrInterruptHandler I2C_SlaveAddrInterruptHandler `*.37(v  1 e 2 0 ]
+"139
+[v _I2C_SlaveBusColInterruptHandler I2C_SlaveBusColInterruptHandler `*.37(v  1 e 2 0 ]
+"140
+[v _I2C_SlaveWrColInterruptHandler I2C_SlaveWrColInterruptHandler `*.37(v  1 e 2 0 ]
+[s S553 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"632 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc\pic16f1939.h
+[u S562 . 1 `S553 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES562  1 e 1 @15 ]
+[s S367 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"732
+[u S376 . 1 `S367 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES376  1 e 1 @17 ]
+"1313
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1375
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1437
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+"1499
+[v _TRISD TRISD `VEuc  1 e 1 @143 ]
+"1561
+[v _TRISE TRISE `VEuc  1 e 1 @144 ]
+[s S325 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 TMR1GIE 1 0 :1:7 
+]
+"1616
+[u S334 . 1 `S325 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES334  1 e 1 @145 ]
+[s S38 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1787
+[s S47 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S52 . 1 `S38 1 . 1 0 `S47 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES52  1 e 1 @149 ]
+"1898
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1957
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"2015
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2357
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+[s S574 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"2374
+[u S583 . 1 `S574 1 . 1 0 ]
+[v _LATAbits LATAbits `VES583  1 e 1 @268 ]
+"2419
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+"2481
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"2543
+[v _LATD LATD `VEuc  1 e 1 @271 ]
+"2613
+[v _LATE LATE `VEuc  1 e 1 @272 ]
+"2923
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"3272
+[v _APFCON APFCON `VEuc  1 e 1 @285 ]
+"3328
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"3386
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"3444
+[v _ANSELD ANSELD `VEuc  1 e 1 @399 ]
+"3514
+[v _ANSELE ANSELE `VEuc  1 e 1 @400 ]
+"4063
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"4133
+[v _WPUE WPUE `VEuc  1 e 1 @528 ]
+"4154
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @529 ]
+"4174
+[v _SSPADD SSPADD `VEuc  1 e 1 @530 ]
+"4194
+[v _SSPMSK SSPMSK `VEuc  1 e 1 @531 ]
+"4214
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @532 ]
+[s S346 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"4231
+[u S355 . 1 `S346 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES355  1 e 1 @532 ]
+"4276
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @533 ]
+"4281
+[v _SSPCON SSPCON `VEuc  1 e 1 @533 ]
+[s S130 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"4301
+[s S136 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S141 . 1 `S130 1 . 1 0 `S136 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES141  1 e 1 @533 ]
+"4414
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @534 ]
+[s S388 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"4431
+[u S397 . 1 `S388 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES397  1 e 1 @534 ]
+"8522
+[v _CKP CKP `VEb  1 e 0 @4268 ]
+"8639
+[v _D_nA D_nA `VEb  1 e 0 @4261 ]
+"8675
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"9092
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"9098
+[v _PLLR PLLR `VEb  1 e 0 @1238 ]
+"9290
+[v _R_nW R_nW `VEb  1 e 0 @4258 ]
+"9749
+[v _SSPIE SSPIE `VEb  1 e 0 @1163 ]
+"9752
+[v _SSPIF SSPIF `VEb  1 e 0 @139 ]
+"9767
+[v _SSPOV SSPOV `VEb  1 e 0 @4270 ]
+"10058
+[v _TRISC3 TRISC3 `VEb  1 e 0 @1139 ]
+"10061
+[v _TRISC4 TRISC4 `VEb  1 e 0 @1140 ]
+"10166
+[v _WCOL WCOL `VEb  1 e 0 @4271 ]
+"65 C:\Users\Michel\MPLABXProjects\testI2C-slave.X\mcc_generated_files/i2c_slave.c
+[v _i2cWrData i2cWrData `VEuc  1 e 1 0 ]
+"66
+[v _i2cRdData i2cRdData `VEuc  1 e 1 0 ]
+"67
+[v _i2cSlaveAddr i2cSlaveAddr `VEuc  1 e 1 0 ]
+"68
+[v _i2cSlaveState i2cSlaveState `VEE3076  1 s 1 i2cSlaveState ]
+"53 C:\Users\Michel\MPLABXProjects\testI2C-slave.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"94
+} 0
+"50 C:\Users\Michel\MPLABXProjects\testI2C-slave.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"57
+} 0
+"73
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"77
+} 0
+"55 C:\Users\Michel\MPLABXProjects\testI2C-slave.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"101
+} 0
+"59 C:\Users\Michel\MPLABXProjects\testI2C-slave.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"71
+} 0
+"108 C:\Users\Michel\MPLABXProjects\testI2C-slave.X\mcc_generated_files/i2c_slave.c
+[v _I2C_Initialize I2C_Initialize `(v  1 e 1 0 ]
+{
+"114
+} 0
+"97 C:\Users\Michel\MPLABXProjects\testI2C-slave.X\main.c
+[v _I2C_Slave_Init I2C_Slave_Init `(v  1 e 1 0 ]
+{
+"108
+} 0
+"110
+[v _I2C_Slave_Read_Write I2C_Slave_Read_Write `II(v  1 e 1 0 ]
+{
+"143
+} 0
