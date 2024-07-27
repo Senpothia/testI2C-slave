@@ -61,7 +61,7 @@ void main(void) {
     //INTERRUPT_GlobalInterruptEnable();
 
     // Enable the Peripheral Interrupts
-     //INTERRUPT_PeripheralInterruptEnable();
+    //INTERRUPT_PeripheralInterruptEnable();
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
@@ -71,73 +71,99 @@ void main(void) {
 
 
     //I2C_SlaveSetIsrHandler(I2C_Slave_Read_Write_interruption);
-    
-   I2C_Slave_Init();
+
+    I2C_Slave_Init();
 
 
     while (1) {
 
         if (BP_GetValue() == 0) {
 
+            REL1_SetLow();
+            REL2_SetLow();
+            REL3_SetLow();
+            REL4_SetLow();
             REL5_SetLow();
             REL6_SetLow();
             REL7_SetLow();
             REL8_SetLow();
-            
+
 
         } else {
 
-            
+
 
         }
     }
 }
 
-
-void I2C_Slave_Init()
-{
-    SSPADD = 50;        // Adresse de l'esclave
-    SSPCON = 0b00110110;     // Configure le module MSSP en mode I2C esclave avec l'accusé de réception de la correspondance d'adresse
+void I2C_Slave_Init() {
+    SSPADD = 50; // Adresse de l'esclave
+    SSPCON = 0b00110110; // Configure le module MSSP en mode I2C esclave avec l'accusé de réception de la correspondance d'adresse
     SSPCON2 = 0;
-    SSPSTAT = 0x80;          // Slew rate control disabled for standard speed mode (100kHz)
-    TRISC3 = 1;              // SCL en entrée
-    TRISC4 = 1;              // SDA en entrée
-    GIE = 1;                 // Active les interruptions globales
-    PEIE = 1;                // Active les interruptions périphériques
-    SSPIE = 1;               // Active les interruptions MSSP
+    SSPSTAT = 0x80; // Slew rate control disabled for standard speed mode (100kHz)
+    TRISC3 = 1; // SCL en entrée
+    TRISC4 = 1; // SDA en entrée
+    GIE = 1; // Active les interruptions globales
+    PEIE = 1; // Active les interruptions périphériques
+    SSPIE = 1; // Active les interruptions MSSP
 }
 
-void __interrupt() I2C_Slave_Read_Write()
-{   
+void __interrupt() I2C_Slave_Read_Write() {
     REL8_SetHigh();
-    if (SSPIF)
-    {
+    if (SSPIF) {
         SSPIF = 0;
-        if (SSPOV || WCOL)
-        {
-            SSPOV = 0;        // Clear the overflow flag
-            WCOL = 0;         // Clear the collision flag
+        if (SSPOV || WCOL) {
+            SSPOV = 0; // Clear the overflow flag
+            WCOL = 0; // Clear the collision flag
             return;
         }
-        
-        if (!D_nA && !R_nW)    // If last byte was an address + Write
+
+        if (!D_nA && !R_nW) // If last byte was an address + Write
         {
-            unsigned char temp = SSPBUF;  // Read the buffer to clear BF
-            CKP = 1;  // Release the clock
+            unsigned char temp = SSPBUF; // Read the buffer to clear BF
+            CKP = 1; // Release the clock
             REL7_SetHigh();
-        }
-        else if (!D_nA && R_nW)  // If last byte was an address + Read
+        } else if (!D_nA && R_nW) // If last byte was an address + Read
         {
-            unsigned char temp = SSPBUF;  // Read the buffer to clear BF
-            SSPBUF = 0x55;  // Load the buffer with the data to be sent
-            CKP = 1;  // Release the clock
+            unsigned char temp = SSPBUF; // Read the buffer to clear BF
+            SSPBUF = 0x55; // Load the buffer with the data to be sent
+            CKP = 1; // Release the clock
             REL6_SetHigh();
-        }
-        else if (D_nA && !R_nW)  // If data byte + Write
+        } else if (D_nA && !R_nW) // If data byte + Write
         {
-            unsigned char temp = SSPBUF;  // Read the buffer to clear BF
-            CKP = 1;  // Release the clock
             REL5_SetHigh();
+            unsigned char temp = SSPBUF; // Read the buffer to clear BF
+            CKP = 1; // Release the clock
+            if (temp == 88) {
+
+                REL1_SetHigh();
+            }
+
+            if (temp == 77) {
+
+                REL2_SetHigh();
+            }
+
+        } else if (D_nA && R_nW) // If data byte + Write
+        {
+            REL3_SetHigh();
+            unsigned char temp = SSPBUF; // Read the buffer to clear BF
+            CKP = 1; // Release the clock
+            if (temp == 88) {
+
+                REL1_SetHigh();
+                SSPBUF = 0x55; // Load the buffer with the data to be sent
+                CKP = 1; // Release the clock
+            }
+
+            if (temp == 77) {
+
+                REL2_SetHigh();
+                SSPBUF = 0x99; // Load the buffer with the data to be sent
+                CKP = 1; // Release the clock
+            }
+
         }
     }
 }
