@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.46 build 20240104201356 
-                                                                                               Sat Jul 27 16:02:23 2024
+                                                                                               Sat Jul 27 19:02:38 2024
 
 Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1 
      1                           	processor	16F1939
@@ -1169,7 +1169,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1150     00B7                     _main:	
   1151                           ;psect for function _main
   1152                           
-  1153     00B7                     l1413:	
+  1153     00B7                     l1409:	
   1154                           ;incstack = 0
   1155                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
   1156                           
@@ -1179,7 +1179,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1160                           
   1161                           ;main.c: 75:     I2C_Slave_Init();
   1162     00BA  3180  20CE  3180   	fcall	_I2C_Slave_Init
-  1163     00BD                     l1415:
+  1163     00BD                     l1411:
   1164                           
   1165                           ;main.c: 80:         if (PORTDbits.RD7 == 0) {
   1166     00BD  0020               	movlb	0	; select bank0
@@ -1187,7 +1187,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1168     00BF  28C1               	goto	u331
   1169     00C0  28C2               	goto	u330
   1170     00C1                     u331:
-  1171     00C1  28BD               	goto	l1415
+  1171     00C1  28BD               	goto	l1411
   1172     00C2                     u330:
   1173     00C2                     l407:	
   1174                           ;main.c: 82:             do { LATAbits.LATA0 = 0; } while(0);
@@ -1222,7 +1222,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1203                           ;main.c: 89:             do { LATAbits.LATA7 = 0; } while(0);
   1204                           
   1205     00CA  138C               	bcf	12,7	;volatile
-  1206     00CB  28BD               	goto	l1415
+  1206     00CB  28BD               	goto	l1411
   1207     00CC  3180  287E         	ljmp	start
   1208     00CE                     __end_of_main:
   1209                           
@@ -1269,7 +1269,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1245     00DD                     _SYSTEM_Initialize:	
   1246                           ;psect for function _SYSTEM_Initialize
   1247                           
-  1248     00DD                     l1393:	
+  1248     00DD                     l1389:	
   1249                           ;incstack = 0
   1250                           ; Regs used in _SYSTEM_Initialize: [wreg+status,2+status,0+pclath+cstack]
   1251                           
@@ -1329,7 +1329,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1300     0102                     _WDT_Initialize:	
   1301                           ;psect for function _WDT_Initialize
   1302                           
-  1303     0102                     l1391:	
+  1303     0102                     l1387:	
   1304                           ;incstack = 0
   1305                           ; Regs used in _WDT_Initialize: [wreg]
   1306                           
@@ -1382,7 +1382,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1348     0096                     _PIN_MANAGER_Initialize:	
   1349                           ;psect for function _PIN_MANAGER_Initialize
   1350                           
-  1351     0096                     l1363:	
+  1351     0096                     l1359:	
   1352                           ;incstack = 0
   1353                           ; Regs used in _PIN_MANAGER_Initialize: [wreg+status,2]
   1354                           
@@ -1402,13 +1402,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1368                           
   1369                           ;mcc_generated_files/pin_manager.c: 64:     LATC = 0x00;
   1370     009B  018E               	clrf	14	;volatile
-  1371     009C                     l1365:
+  1371     009C                     l1361:
   1372                           
   1373                           ;mcc_generated_files/pin_manager.c: 69:     TRISE = 0x0F;
   1374     009C  300F               	movlw	15
   1375     009D  0021               	movlb	1	; select bank1
   1376     009E  0090               	movwf	16	;volatile
-  1377     009F                     l1367:
+  1377     009F                     l1363:
   1378                           
   1379                           ;mcc_generated_files/pin_manager.c: 70:     TRISA = 0x00;
   1380     009F  018C               	clrf	12	;volatile
@@ -1441,21 +1441,21 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1407                           ;mcc_generated_files/pin_manager.c: 81:     ANSELA = 0x3F;
   1408     00AD  303F               	movlw	63
   1409     00AE  008C               	movwf	12	;volatile
-  1410     00AF                     l1369:
+  1410     00AF                     l1365:
   1411                           
   1412                           ;mcc_generated_files/pin_manager.c: 86:     WPUE = 0x00;
   1413     00AF  0024               	movlb	4	; select bank4
   1414     00B0  0190               	clrf	16	;volatile
-  1415     00B1                     l1371:
+  1415     00B1                     l1367:
   1416                           
   1417                           ;mcc_generated_files/pin_manager.c: 87:     WPUB = 0x00;
   1418     00B1  018D               	clrf	13	;volatile
-  1419     00B2                     l1373:
+  1419     00B2                     l1369:
   1420                           
   1421                           ;mcc_generated_files/pin_manager.c: 88:     OPTION_REGbits.nWPUEN = 1;
   1422     00B2  0021               	movlb	1	; select bank1
   1423     00B3  1795               	bsf	21,7	;volatile
-  1424     00B4                     l1375:
+  1424     00B4                     l1371:
   1425                           
   1426                           ;mcc_generated_files/pin_manager.c: 94:     APFCON = 0x00;
   1427     00B4  0022               	movlb	2	; select bank2
@@ -1504,7 +1504,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1465     00EA                     _OSCILLATOR_Initialize:	
   1466                           ;psect for function _OSCILLATOR_Initialize
   1467                           
-  1468     00EA                     l1385:	
+  1468     00EA                     l1381:	
   1469                           ;incstack = 0
   1470                           ; Regs used in _OSCILLATOR_Initialize: [wreg+status,2]
   1471                           
@@ -1513,11 +1513,11 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1474     00EA  3070               	movlw	112
   1475     00EB  0021               	movlb	1	; select bank1
   1476     00EC  0099               	movwf	25	;volatile
-  1477     00ED                     l1387:
+  1477     00ED                     l1383:
   1478                           
   1479                           ;mcc_generated_files/mcc.c: 64:     OSCTUNE = 0x00;
   1480     00ED  0198               	clrf	24	;volatile
-  1481     00EE                     l1389:
+  1481     00EE                     l1385:
   1482                           
   1483                           ;mcc_generated_files/mcc.c: 66:     BORCON = 0x00;
   1484     00EE  0022               	movlb	2	; select bank2
@@ -1579,7 +1579,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1535     00F6                     _I2C_Initialize:	
   1536                           ;psect for function _I2C_Initialize
   1537                           
-  1538     00F6                     l1377:	
+  1538     00F6                     l1373:	
   1539                           ;incstack = 0
   1540                           ; Regs used in _I2C_Initialize: [wreg+status,2+status,0]
   1541                           
@@ -1588,7 +1588,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1544     00F6  3080               	movlw	128
   1545     00F7  0024               	movlb	4	; select bank4
   1546     00F8  0094               	movwf	20	;volatile
-  1547     00F9                     l1379:
+  1547     00F9                     l1375:
   1548                           
   1549                           ;mcc_generated_files/i2c_slave.c: 111:     SSPCON1 |= 0x06;
   1550     00F9  3006               	movlw	6
@@ -1597,11 +1597,11 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1553     00FC  0826               	movf	??_I2C_Initialize,w
   1554     00FD  0024               	movlb	4	; select bank4
   1555     00FE  0495               	iorwf	21,f	;volatile
-  1556     00FF                     l1381:
+  1556     00FF                     l1377:
   1557                           
   1558                           ;mcc_generated_files/i2c_slave.c: 112:     SSPCON2 = 0x00;
   1559     00FF  0196               	clrf	22	;volatile
-  1560     0100                     l1383:
+  1560     0100                     l1379:
   1561                           
   1562                           ;mcc_generated_files/i2c_slave.c: 113:     SSPCON1bits.SSPEN = 0;
   1563     0100  1295               	bcf	21,5	;volatile
@@ -1649,7 +1649,7 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1600     00CE                     _I2C_Slave_Init:	
   1601                           ;psect for function _I2C_Slave_Init
   1602                           
-  1603     00CE                     l1395:	
+  1603     00CE                     l1391:	
   1604                           ;incstack = 0
   1605                           ; Regs used in _I2C_Slave_Init: [wreg+status,2]
   1606                           
@@ -1662,33 +1662,33 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1613                           ;main.c: 102:     SSPCON = 0b00110110;
   1614     00D1  3036               	movlw	54
   1615     00D2  0095               	movwf	21	;volatile
-  1616     00D3                     l1397:
+  1616     00D3                     l1393:
   1617                           
   1618                           ;main.c: 103:     SSPCON2 = 0;
   1619     00D3  0196               	clrf	22	;volatile
-  1620     00D4                     l1399:
+  1620     00D4                     l1395:
   1621                           
   1622                           ;main.c: 104:     SSPSTAT = 0x80;
   1623     00D4  3080               	movlw	128
   1624     00D5  0094               	movwf	20	;volatile
-  1625     00D6                     l1401:
+  1625     00D6                     l1397:
   1626                           
   1627                           ;main.c: 105:     TRISC3 = 1;
   1628     00D6  0021               	movlb	1	; select bank1
   1629     00D7  158E               	bsf	14,3	;volatile
-  1630     00D8                     l1403:
+  1630     00D8                     l1399:
   1631                           
   1632                           ;main.c: 106:     TRISC4 = 1;
   1633     00D8  160E               	bsf	14,4	;volatile
-  1634     00D9                     l1405:
+  1634     00D9                     l1401:
   1635                           
   1636                           ;main.c: 107:     GIE = 1;
   1637     00D9  178B               	bsf	11,7	;volatile
-  1638     00DA                     l1407:
+  1638     00DA                     l1403:
   1639                           
   1640                           ;main.c: 108:     PEIE = 1;
   1641     00DA  170B               	bsf	11,6	;volatile
-  1642     00DB                     l1409:
+  1642     00DB                     l1405:
   1643                           
   1644                           ;main.c: 109:     SSPIE = 1;
   1645     00DB  1591               	bsf	17,3	;volatile
@@ -1743,13 +1743,13 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1689                           ; Regs used in _I2C_Slave_Read_Write: [wreg+status,2+status,0]
   1690     0005  3180               	pagesel	$
   1691     0006                     i1l434:	
-  1692                           ;main.c: 113:     do { LATAbits.LATA7 = 1; } while(0);
+  1692                           ;main.c: 114:     do { LATAbits.LATA7 = 1; } while(0);
   1693                           
   1694     0006  0022               	movlb	2	; select bank2
   1695     0007  178C               	bsf	12,7	;volatile
   1696     0008                     i1l435:
   1697                           
-  1698                           ;main.c: 114:     if (SSPIF) {
+  1698                           ;main.c: 116:     if (SSPIF) {
   1699     0008  0020               	movlb	0	; select bank0
   1700     0009  1D91               	btfss	17,3	;volatile
   1701     000A  280C               	goto	u15_21
@@ -1759,10 +1759,10 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1705     000D                     u15_20:
   1706     000D                     i1l1297:
   1707                           
-  1708                           ;main.c: 115:         SSPIF = 0;
+  1708                           ;main.c: 117:         SSPIF = 0;
   1709     000D  1191               	bcf	17,3	;volatile
   1710                           
-  1711                           ;main.c: 116:         if (SSPOV || WCOL) {
+  1711                           ;main.c: 118:         if (SSPOV || WCOL) {
   1712     000E  0024               	movlb	4	; select bank4
   1713     000F  1B15               	btfsc	21,6	;volatile
   1714     0010  2812               	goto	u16_21
@@ -1779,215 +1779,215 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
   1725     0017                     u17_20:
   1726     0017                     i1l439:
   1727                           
-  1728                           ;main.c: 117:             SSPOV = 0;
+  1728                           ;main.c: 119:             SSPOV = 0;
   1729     0017  1315               	bcf	21,6	;volatile
   1730                           
-  1731                           ;main.c: 118:             WCOL = 0;
+  1731                           ;main.c: 120:             WCOL = 0;
   1732     0018  1395               	bcf	21,7	;volatile
   1733                           
-  1734                           ;main.c: 119:             return;
+  1734                           ;main.c: 121:             return;
   1735     0019  287C               	goto	i1l440
   1736     001A                     i1l437:	
-  1737                           ;main.c: 120:         }
+  1737                           ;main.c: 122:         }
   1738                           
   1739                           
-  1740                           ;main.c: 122:         if (!D_nA && !R_nW)
+  1740                           ;main.c: 124:         if (!D_nA && !R_nW)
   1741     001A  1A94               	btfsc	20,5	;volatile
   1742     001B  281D               	goto	u18_21
   1743     001C  281E               	goto	u18_20
   1744     001D                     u18_21:
-  1745     001D  2827               	goto	i1l441
+  1745     001D  2828               	goto	i1l441
   1746     001E                     u18_20:
   1747     001E                     i1l1301:
   1748     001E  1914               	btfsc	20,2	;volatile
   1749     001F  2821               	goto	u19_21
   1750     0020  2822               	goto	u19_20
   1751     0021                     u19_21:
-  1752     0021  2827               	goto	i1l441
+  1752     0021  2828               	goto	i1l441
   1753     0022                     u19_20:
-  1754     0022                     i1l1303:
-  1755     0022  0811               	movf	17,w	;volatile
-  1756     0023                     i1l1305:
-  1757                           
-  1758                           ;main.c: 125:             CKP = 1;
-  1759     0023  1615               	bsf	21,4	;volatile
-  1760     0024                     i1l1307:
-  1761     0024  0022               	movlb	2	; select bank2
-  1762     0025  170C               	bsf	12,6	;volatile
-  1763     0026  287C               	goto	i1l440
-  1764     0027                     i1l441:
-  1765     0027  1A94               	btfsc	20,5	;volatile
-  1766     0028  282A               	goto	u20_21
-  1767     0029  282B               	goto	u20_20
-  1768     002A                     u20_21:
-  1769     002A  2836               	goto	i1l445
-  1770     002B                     u20_20:
-  1771     002B                     i1l1309:
-  1772     002B  1D14               	btfss	20,2	;volatile
-  1773     002C  282E               	goto	u21_21
-  1774     002D  282F               	goto	u21_20
-  1775     002E                     u21_21:
-  1776     002E  2836               	goto	i1l445
-  1777     002F                     u21_20:
-  1778     002F                     i1l1311:
-  1779     002F  0811               	movf	17,w	;volatile
-  1780                           
-  1781                           ;main.c: 130:             SSPBUF = 0x55;
-  1782     0030  3055               	movlw	85
-  1783     0031  0091               	movwf	17	;volatile
-  1784     0032                     i1l1313:
+  1754     0022                     i1l442:	
+  1755                           ;main.c: 125:         {;main.c: 126:             do { LATAbits.LATA6 = 1; } while(0);
+  1756                           
+  1757     0022  0022               	movlb	2	; select bank2
+  1758     0023  170C               	bsf	12,6	;volatile
+  1759     0024                     i1l1303:
+  1760     0024  0024               	movlb	4	; select bank4
+  1761     0025  0811               	movf	17,w	;volatile
+  1762     0026                     i1l1305:
+  1763                           
+  1764                           ;main.c: 128:             CKP = 1;
+  1765     0026  1615               	bsf	21,4	;volatile
+  1766                           
+  1767                           ;main.c: 131:         } else if (!D_nA && R_nW)
+  1768     0027  287C               	goto	i1l440
+  1769     0028                     i1l441:
+  1770     0028  1A94               	btfsc	20,5	;volatile
+  1771     0029  282B               	goto	u20_21
+  1772     002A  282C               	goto	u20_20
+  1773     002B                     u20_21:
+  1774     002B  2837               	goto	i1l445
+  1775     002C                     u20_20:
+  1776     002C                     i1l1307:
+  1777     002C  1D14               	btfss	20,2	;volatile
+  1778     002D  282F               	goto	u21_21
+  1779     002E  2830               	goto	u21_20
+  1780     002F                     u21_21:
+  1781     002F  2837               	goto	i1l445
+  1782     0030                     u21_20:
+  1783     0030                     i1l446:	
+  1784                           ;main.c: 132:         {;main.c: 133:              do { LATAbits.LATA5 = 1; } while(0);
   1785                           
-  1786                           ;main.c: 131:             CKP = 1;
-  1787     0032  1615               	bsf	21,4	;volatile
-  1788     0033                     i1l1315:
-  1789     0033  0022               	movlb	2	; select bank2
-  1790     0034  168C               	bsf	12,5	;volatile
-  1791     0035  287C               	goto	i1l440
-  1792     0036                     i1l445:
-  1793     0036  1E94               	btfss	20,5	;volatile
-  1794     0037  2839               	goto	u22_21
-  1795     0038  283A               	goto	u22_20
-  1796     0039                     u22_21:
-  1797     0039  2855               	goto	i1l449
-  1798     003A                     u22_20:
-  1799     003A                     i1l1317:
-  1800     003A  1914               	btfsc	20,2	;volatile
-  1801     003B  283D               	goto	u23_21
-  1802     003C  283E               	goto	u23_20
-  1803     003D                     u23_21:
-  1804     003D  2855               	goto	i1l449
-  1805     003E                     u23_20:
-  1806     003E                     i1l450:	
-  1807                           ;main.c: 134:         {;main.c: 135:             do { LATAbits.LATA4 = 1; } while(0);
-  1808                           
-  1809     003E  0022               	movlb	2	; select bank2
-  1810     003F  160C               	bsf	12,4	;volatile
-  1811     0040                     i1l1319:
+  1786     0030  0022               	movlb	2	; select bank2
+  1787     0031  168C               	bsf	12,5	;volatile
+  1788     0032                     i1l1309:
+  1789     0032  0024               	movlb	4	; select bank4
+  1790     0033  0811               	movf	17,w	;volatile
+  1791                           
+  1792                           ;main.c: 135:             SSPBUF = 0x55;
+  1793     0034  3055               	movlw	85
+  1794     0035  0091               	movwf	17	;volatile
+  1795     0036  2826               	goto	i1l1305
+  1796     0037                     i1l445:
+  1797     0037  1E94               	btfss	20,5	;volatile
+  1798     0038  283A               	goto	u22_21
+  1799     0039  283B               	goto	u22_20
+  1800     003A                     u22_21:
+  1801     003A  2856               	goto	i1l449
+  1802     003B                     u22_20:
+  1803     003B                     i1l1313:
+  1804     003B  1914               	btfsc	20,2	;volatile
+  1805     003C  283E               	goto	u23_21
+  1806     003D  283F               	goto	u23_20
+  1807     003E                     u23_21:
+  1808     003E  2856               	goto	i1l449
+  1809     003F                     u23_20:
+  1810     003F                     i1l450:	
+  1811                           ;main.c: 139:         {;main.c: 140:             do { LATAbits.LATA4 = 1; } while(0);
   1812                           
-  1813                           ;main.c: 136:             unsigned char temp = SSPBUF;
-  1814     0040  0024               	movlb	4	; select bank4
-  1815     0041  0811               	movf	17,w	;volatile
-  1816     0042  00FB               	movwf	I2C_Slave_Read_Write@temp_648
-  1817     0043                     i1l1321:
-  1818                           
-  1819                           ;main.c: 137:             CKP = 1;
-  1820     0043  1615               	bsf	21,4	;volatile
-  1821     0044                     i1l1323:
+  1813     003F  0022               	movlb	2	; select bank2
+  1814     0040  160C               	bsf	12,4	;volatile
+  1815     0041                     i1l1315:
+  1816                           
+  1817                           ;main.c: 141:             unsigned char temp = SSPBUF;
+  1818     0041  0024               	movlb	4	; select bank4
+  1819     0042  0811               	movf	17,w	;volatile
+  1820     0043  00FB               	movwf	I2C_Slave_Read_Write@temp_648
+  1821     0044                     i1l1317:
   1822                           
-  1823                           ;main.c: 138:             if (temp == 88) {
-  1824     0044  3058               	movlw	88
-  1825     0045  067B               	xorwf	I2C_Slave_Read_Write@temp_648,w
-  1826     0046  1D03               	btfss	3,2
-  1827     0047  2849               	goto	u24_21
-  1828     0048  284A               	goto	u24_20
-  1829     0049                     u24_21:
-  1830     0049  284C               	goto	i1l1325
-  1831     004A                     u24_20:
-  1832     004A                     i1l453:	
-  1833                           ;main.c: 140:                 do { LATAbits.LATA0 = 1; } while(0);
-  1834                           
-  1835     004A  0022               	movlb	2	; select bank2
-  1836     004B  140C               	bsf	12,0	;volatile
-  1837     004C                     i1l1325:
+  1823                           ;main.c: 142:             CKP = 1;
+  1824     0044  1615               	bsf	21,4	;volatile
+  1825     0045                     i1l1319:
+  1826                           
+  1827                           ;main.c: 143:             if (temp == 88) {
+  1828     0045  3058               	movlw	88
+  1829     0046  067B               	xorwf	I2C_Slave_Read_Write@temp_648,w
+  1830     0047  1D03               	btfss	3,2
+  1831     0048  284A               	goto	u24_21
+  1832     0049  284B               	goto	u24_20
+  1833     004A                     u24_21:
+  1834     004A  284D               	goto	i1l1321
+  1835     004B                     u24_20:
+  1836     004B                     i1l453:	
+  1837                           ;main.c: 145:                 do { LATAbits.LATA0 = 1; } while(0);
   1838                           
-  1839                           ;main.c: 143:             if (temp == 77) {
-  1840     004C  304D               	movlw	77
-  1841     004D  067B               	xorwf	I2C_Slave_Read_Write@temp_648,w
-  1842     004E  1D03               	btfss	3,2
-  1843     004F  2851               	goto	u25_21
-  1844     0050  2852               	goto	u25_20
-  1845     0051                     u25_21:
-  1846     0051  287C               	goto	i1l440
-  1847     0052                     u25_20:
-  1848     0052                     i1l456:	
-  1849                           ;main.c: 145:                 do { LATAbits.LATA1 = 1; } while(0);
-  1850                           
-  1851     0052  0022               	movlb	2	; select bank2
-  1852     0053  148C               	bsf	12,1	;volatile
-  1853     0054  287C               	goto	i1l440
-  1854     0055                     i1l449:
-  1855     0055  1E94               	btfss	20,5	;volatile
-  1856     0056  2858               	goto	u26_21
-  1857     0057  2859               	goto	u26_20
-  1858     0058                     u26_21:
-  1859     0058  287C               	goto	i1l440
-  1860     0059                     u26_20:
-  1861     0059                     i1l1327:
-  1862     0059  1D14               	btfss	20,2	;volatile
-  1863     005A  285C               	goto	u27_21
-  1864     005B  285D               	goto	u27_20
-  1865     005C                     u27_21:
-  1866     005C  287C               	goto	i1l440
-  1867     005D                     u27_20:
-  1868     005D                     i1l460:	
-  1869                           ;main.c: 149:         {;main.c: 150:             do { LATAbits.LATA2 = 1; } while(0);
-  1870                           
-  1871     005D  0022               	movlb	2	; select bank2
-  1872     005E  150C               	bsf	12,2	;volatile
-  1873     005F                     i1l1329:
+  1839     004B  0022               	movlb	2	; select bank2
+  1840     004C  140C               	bsf	12,0	;volatile
+  1841     004D                     i1l1321:
+  1842                           
+  1843                           ;main.c: 148:             if (temp == 77) {
+  1844     004D  304D               	movlw	77
+  1845     004E  067B               	xorwf	I2C_Slave_Read_Write@temp_648,w
+  1846     004F  1D03               	btfss	3,2
+  1847     0050  2852               	goto	u25_21
+  1848     0051  2853               	goto	u25_20
+  1849     0052                     u25_21:
+  1850     0052  287C               	goto	i1l440
+  1851     0053                     u25_20:
+  1852     0053                     i1l456:	
+  1853                           ;main.c: 150:                 do { LATAbits.LATA1 = 1; } while(0);
+  1854                           
+  1855     0053  0022               	movlb	2	; select bank2
+  1856     0054  148C               	bsf	12,1	;volatile
+  1857     0055  287C               	goto	i1l440
+  1858     0056                     i1l449:
+  1859     0056  1E94               	btfss	20,5	;volatile
+  1860     0057  2859               	goto	u26_21
+  1861     0058  285A               	goto	u26_20
+  1862     0059                     u26_21:
+  1863     0059  287C               	goto	i1l448
+  1864     005A                     u26_20:
+  1865     005A                     i1l1323:
+  1866     005A  1D14               	btfss	20,2	;volatile
+  1867     005B  285D               	goto	u27_21
+  1868     005C  285E               	goto	u27_20
+  1869     005D                     u27_21:
+  1870     005D  287C               	goto	i1l448
+  1871     005E                     u27_20:
+  1872     005E                     i1l460:	
+  1873                           ;main.c: 154:         {;main.c: 155:             do { LATAbits.LATA2 = 1; } while(0);
   1874                           
-  1875                           ;main.c: 151:             unsigned char temp = SSPBUF;
-  1876     005F  0024               	movlb	4	; select bank4
-  1877     0060  0811               	movf	17,w	;volatile
-  1878     0061  00FC               	movwf	I2C_Slave_Read_Write@temp_649
-  1879     0062                     i1l1331:
-  1880                           
-  1881                           ;main.c: 152:             CKP = 1;
-  1882     0062  1615               	bsf	21,4	;volatile
-  1883     0063                     i1l1333:
+  1875     005E  0022               	movlb	2	; select bank2
+  1876     005F  150C               	bsf	12,2	;volatile
+  1877     0060                     i1l1325:
+  1878                           
+  1879                           ;main.c: 156:             unsigned char temp = SSPBUF;
+  1880     0060  0024               	movlb	4	; select bank4
+  1881     0061  0811               	movf	17,w	;volatile
+  1882     0062  00FC               	movwf	I2C_Slave_Read_Write@temp_649
+  1883     0063                     i1l1327:
   1884                           
-  1885                           ;main.c: 153:             if (temp == 88) {
-  1886     0063  3058               	movlw	88
-  1887     0064  067C               	xorwf	I2C_Slave_Read_Write@temp_649,w
-  1888     0065  1D03               	btfss	3,2
-  1889     0066  2868               	goto	u28_21
-  1890     0067  2869               	goto	u28_20
-  1891     0068                     u28_21:
-  1892     0068  286F               	goto	i1l1339
-  1893     0069                     u28_20:
-  1894     0069                     i1l463:	
-  1895                           ;main.c: 155:                 do { LATAbits.LATA0 = 1; } while(0);
-  1896                           
-  1897     0069  0022               	movlb	2	; select bank2
-  1898     006A  140C               	bsf	12,0	;volatile
-  1899     006B                     i1l1335:
+  1885                           ;main.c: 157:             CKP = 1;
+  1886     0063  1615               	bsf	21,4	;volatile
+  1887     0064                     i1l1329:
+  1888                           
+  1889                           ;main.c: 158:             if (temp == 88) {
+  1890     0064  3058               	movlw	88
+  1891     0065  067C               	xorwf	I2C_Slave_Read_Write@temp_649,w
+  1892     0066  1D03               	btfss	3,2
+  1893     0067  2869               	goto	u28_21
+  1894     0068  286A               	goto	u28_20
+  1895     0069                     u28_21:
+  1896     0069  2870               	goto	i1l1335
+  1897     006A                     u28_20:
+  1898     006A                     i1l463:	
+  1899                           ;main.c: 160:                 do { LATAbits.LATA0 = 1; } while(0);
   1900                           
-  1901                           ;main.c: 156:                 SSPBUF = 0x55;
-  1902     006B  3055               	movlw	85
-  1903     006C  0024               	movlb	4	; select bank4
-  1904     006D  0091               	movwf	17	;volatile
-  1905     006E                     i1l1337:
-  1906                           
-  1907                           ;main.c: 157:                 CKP = 1;
-  1908     006E  1615               	bsf	21,4	;volatile
-  1909     006F                     i1l1339:
+  1901     006A  0022               	movlb	2	; select bank2
+  1902     006B  140C               	bsf	12,0	;volatile
+  1903     006C                     i1l1331:
+  1904                           
+  1905                           ;main.c: 161:                 SSPBUF = 0x55;
+  1906     006C  3055               	movlw	85
+  1907     006D  0024               	movlb	4	; select bank4
+  1908     006E  0091               	movwf	17	;volatile
+  1909     006F                     i1l1333:
   1910                           
-  1911                           ;main.c: 160:             if (temp == 77) {
-  1912     006F  304D               	movlw	77
-  1913     0070  067C               	xorwf	I2C_Slave_Read_Write@temp_649,w
-  1914     0071  1D03               	btfss	3,2
-  1915     0072  2874               	goto	u29_21
-  1916     0073  2875               	goto	u29_20
-  1917     0074                     u29_21:
-  1918     0074  287C               	goto	i1l444
-  1919     0075                     u29_20:
-  1920     0075                     i1l466:	
-  1921                           ;main.c: 162:                 do { LATAbits.LATA1 = 1; } while(0);
-  1922                           
-  1923     0075  0022               	movlb	2	; select bank2
-  1924     0076  148C               	bsf	12,1	;volatile
-  1925     0077                     i1l1341:
+  1911                           ;main.c: 162:                 CKP = 1;
+  1912     006F  1615               	bsf	21,4	;volatile
+  1913     0070                     i1l1335:
+  1914                           
+  1915                           ;main.c: 165:             if (temp == 77) {
+  1916     0070  304D               	movlw	77
+  1917     0071  067C               	xorwf	I2C_Slave_Read_Write@temp_649,w
+  1918     0072  1D03               	btfss	3,2
+  1919     0073  2875               	goto	u29_21
+  1920     0074  2876               	goto	u29_20
+  1921     0075                     u29_21:
+  1922     0075  287C               	goto	i1l448
+  1923     0076                     u29_20:
+  1924     0076                     i1l466:	
+  1925                           ;main.c: 167:                 do { LATAbits.LATA1 = 1; } while(0);
   1926                           
-  1927                           ;main.c: 163:                 SSPBUF = 0x99;
-  1928     0077  3099               	movlw	153
-  1929     0078  0024               	movlb	4	; select bank4
-  1930     0079  0091               	movwf	17	;volatile
-  1931     007A                     i1l1343:
-  1932                           
-  1933                           ;main.c: 164:                 CKP = 1;
-  1934     007A  1615               	bsf	21,4	;volatile
-  1935     007B  287C               	goto	i1l440
-  1936     007C                     i1l444:
+  1927     0076  0022               	movlb	2	; select bank2
+  1928     0077  148C               	bsf	12,1	;volatile
+  1929     0078                     i1l1337:
+  1930                           
+  1931                           ;main.c: 168:                 SSPBUF = 0x99;
+  1932     0078  3099               	movlw	153
+  1933     0079  0024               	movlb	4	; select bank4
+  1934     007A  0091               	movwf	17	;volatile
+  1935     007B  2826               	goto	i1l1305
+  1936     007C                     i1l448:
   1937     007C                     i1l440:
   1938     007C  107E               	bcf	int$flags,0	;clear compiler interrupt flag (level 1)
   1939     007D  0009               	retfie
@@ -2349,7 +2349,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.46 build 20240104201356 
-Symbol Table                                                                                   Sat Jul 27 16:02:23 2024
+Symbol Table                                                                                   Sat Jul 27 19:02:38 2024
 
                        _SSPSTATbits 0214                                  l39 00B6  
                                 l81 00F5                                  l75 00E9  
@@ -2362,19 +2362,19 @@ Symbol Table                                                                    
                                _CKP 10AC                                 _GIE 005F  
                                u320 00F5                                 u321 00F4  
                                u330 00C2                                 u331 00C1  
-                              l1401 00D6                                l1403 00D8  
-                              l1405 00D9                                l1413 00B7  
-                              l1407 00DA                                l1415 00BD  
-                              l1409 00DB                                l1371 00B1  
-                              l1363 0096                                l1381 00FF  
-                              l1373 00B2                                l1365 009C  
-                              l1383 0100                                l1375 00B4  
-                              l1367 009F                                l1391 0102  
-                              l1377 00F6                                l1385 00EA  
-                              l1369 00AF                                l1393 00DD  
-                              l1395 00CE                                l1379 00F9  
-                              l1387 00ED                                l1397 00D3  
-                              l1389 00EE                                l1399 00D4  
+                              l1401 00D9                                l1403 00DA  
+                              l1411 00BD                                l1405 00DB  
+                              l1361 009C                                l1409 00B7  
+                              l1371 00B4                                l1363 009F  
+                              l1373 00F6                                l1381 00EA  
+                              l1365 00AF                                l1391 00CE  
+                              l1375 00F9                                l1383 00ED  
+                              l1367 00B1                                l1359 0096  
+                              l1393 00D3                                l1377 00FF  
+                              l1385 00EE                                l1369 00B2  
+                              l1395 00D4                                l1379 0100  
+                              l1387 0102                                l1397 00D6  
+                              l1389 00DD                                l1399 00D8  
                               _LATA 010C                                _LATB 010D  
                               _LATC 010E                                _LATD 010F  
                               _LATE 0110                                _PEIE 005E  
@@ -2385,28 +2385,29 @@ Symbol Table                                                                    
                               start 007E                _I2C_Slave_Read_Write 0004  
      __end_of_OSCILLATOR_Initialize 00F6    _I2C_SlaveDefAddrInterruptHandler 0000  
                              ?_main 007B                               i1l440 007C  
-                             i1l441 0027                               i1l450 003E  
-                             i1l434 0006                               i1l435 0008  
-                             i1l444 007C                               i1l460 005D  
-                             i1l453 004A                               i1l445 0036  
-                             i1l437 001A                               i1l463 0069  
-                             i1l439 0017                               i1l456 0052  
-                             i1l449 0055                               i1l466 0075  
-                             u20_20 002B                               u20_21 002A  
-                             u21_20 002F                               u21_21 002E  
-                             u22_20 003A                               u22_21 0039  
-                             u23_20 003E                               u15_20 000D  
-                             u23_21 003D                               u15_21 000C  
-                             u24_20 004A                               u16_20 0013  
-                             u24_21 0049                               u16_21 0012  
-                             u25_20 0052                               u17_20 0017  
-                             u25_21 0051                               u17_21 0016  
-                             u26_20 0059                               u18_20 001E  
-                             u26_21 0058                               u18_21 001D  
-                             u27_20 005D                               u19_20 0022  
-                             u27_21 005C                               u19_21 0021  
-                             u28_20 0069                               u28_21 0068  
-                             u29_20 0075                               u29_21 0074  
+                             i1l441 0028                               i1l450 003F  
+                             i1l442 0022                               i1l434 0006  
+                             i1l435 0008                               i1l460 005E  
+                             i1l453 004B                               i1l445 0037  
+                             i1l437 001A                               i1l446 0030  
+                             i1l463 006A                               i1l439 0017  
+                             i1l448 007C                               i1l456 0053  
+                             i1l449 0056                               i1l466 0076  
+                             u20_20 002C                               u20_21 002B  
+                             u21_20 0030                               u21_21 002F  
+                             u22_20 003B                               u22_21 003A  
+                             u23_20 003F                               u15_20 000D  
+                             u23_21 003E                               u15_21 000C  
+                             u24_20 004B                               u16_20 0013  
+                             u24_21 004A                               u16_21 0012  
+                             u25_20 0053                               u17_20 0017  
+                             u25_21 0052                               u17_21 0016  
+                             u26_20 005A                               u18_20 001E  
+                             u26_21 0059                               u18_21 001D  
+                             u27_20 005E                               u19_20 0022  
+                             u27_21 005D                               u19_21 0021  
+                             u28_20 006A                               u28_21 0069  
+                             u29_20 0076                               u29_21 0075  
                              _TRISA 008C                               _TRISB 008D  
                              _TRISC 008E                               _TRISD 008F  
                              _SSPIE 048B                               _TRISE 0090  
@@ -2419,17 +2420,15 @@ Symbol Table                                                                    
                             _APFCON 011D                              _ANSELA 018C  
                             _ANSELB 018D                              _ANSELD 018F  
                             _ANSELE 0190                              _BORCON 0116  
-                            i1l1301 001E                              i1l1311 002F  
-                            i1l1303 0022                              i1l1321 0043  
-                            i1l1313 0032                              i1l1305 0023  
-                            i1l1331 0062                              i1l1323 0044  
-                            i1l1315 0033                              i1l1307 0024  
-                            i1l1341 0077                              i1l1333 0063  
-                            i1l1325 004C                              i1l1317 003A  
-                            i1l1309 002B                              i1l1343 007A  
-                            i1l1335 006B                              i1l1327 0059  
-                            i1l1319 0040                              i1l1337 006E  
-                            i1l1329 005F                              i1l1339 006F  
+                            i1l1301 001E                              i1l1303 0024  
+                            i1l1321 004D                              i1l1313 003B  
+                            i1l1305 0026                              i1l1331 006C  
+                            i1l1323 005A                              i1l1315 0041  
+                            i1l1307 002C                              i1l1333 006F  
+                            i1l1325 0060                              i1l1317 0044  
+                            i1l1309 0032                              i1l1335 0070  
+                            i1l1327 0063                              i1l1319 0045  
+                            i1l1337 0078                              i1l1329 0064  
                             i1l1297 000D                              i1l1299 0013  
                             _OSCCON 0099                              _WDTCON 0097  
                             _SSPADD 0212                              _TRISC3 0473  

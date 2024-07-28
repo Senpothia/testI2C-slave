@@ -110,7 +110,9 @@ void I2C_Slave_Init() {
 }
 
 void __interrupt() I2C_Slave_Read_Write() {
-    REL8_SetHigh();
+
+    REL8_SetHigh(); // entrée en interruption
+
     if (SSPIF) {
         SSPIF = 0;
         if (SSPOV || WCOL) {
@@ -121,18 +123,21 @@ void __interrupt() I2C_Slave_Read_Write() {
 
         if (!D_nA && !R_nW) // If last byte was an address + Write
         {
+            REL7_SetHigh();  // Adresse + écriture (R/W=0)
             unsigned char temp = SSPBUF; // Read the buffer to clear BF
             CKP = 1; // Release the clock
-            REL7_SetHigh();
+
+
         } else if (!D_nA && R_nW) // If last byte was an address + Read
         {
+             REL6_SetHigh();   // adresse + lecture (R/W=1)
             unsigned char temp = SSPBUF; // Read the buffer to clear BF
             SSPBUF = 0x55; // Load the buffer with the data to be sent
             CKP = 1; // Release the clock
-            REL6_SetHigh();
+           
         } else if (D_nA && !R_nW) // If data byte + Write
         {
-            REL5_SetHigh();
+            REL5_SetHigh();  // Donnée + écriture 
             unsigned char temp = SSPBUF; // Read the buffer to clear BF
             CKP = 1; // Release the clock
             if (temp == 88) {
@@ -145,9 +150,9 @@ void __interrupt() I2C_Slave_Read_Write() {
                 REL2_SetHigh();
             }
 
-        } else if (D_nA && R_nW) // If data byte + Write
+        } else if (D_nA && R_nW) // If data byte + lecture
         {
-            REL3_SetHigh();
+            REL3_SetHigh(); // Donnée + ecriture
             unsigned char temp = SSPBUF; // Read the buffer to clear BF
             CKP = 1; // Release the clock
             if (temp == 88) {

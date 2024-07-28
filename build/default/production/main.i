@@ -5787,7 +5787,9 @@ void I2C_Slave_Init() {
 }
 
 void __attribute__((picinterrupt(("")))) I2C_Slave_Read_Write() {
+
     do { LATAbits.LATA7 = 1; } while(0);
+
     if (SSPIF) {
         SSPIF = 0;
         if (SSPOV || WCOL) {
@@ -5798,15 +5800,18 @@ void __attribute__((picinterrupt(("")))) I2C_Slave_Read_Write() {
 
         if (!D_nA && !R_nW)
         {
+            do { LATAbits.LATA6 = 1; } while(0);
             unsigned char temp = SSPBUF;
             CKP = 1;
-            do { LATAbits.LATA6 = 1; } while(0);
+
+
         } else if (!D_nA && R_nW)
         {
+             do { LATAbits.LATA5 = 1; } while(0);
             unsigned char temp = SSPBUF;
             SSPBUF = 0x55;
             CKP = 1;
-            do { LATAbits.LATA5 = 1; } while(0);
+
         } else if (D_nA && !R_nW)
         {
             do { LATAbits.LATA4 = 1; } while(0);
