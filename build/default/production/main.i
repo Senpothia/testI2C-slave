@@ -5742,13 +5742,14 @@ void WDT_Initialize(void);
 
 
 _Bool request = 0;
+char ordre;
 
 void I2C_Slave_Init(void);
 
 void main(void) {
 
     SYSTEM_Initialize();
-# 75 "main.c"
+# 76 "main.c"
     I2C_Slave_Init();
 
 
@@ -5788,10 +5789,21 @@ void I2C_Slave_Init() {
 
 void __attribute__((picinterrupt(("")))) I2C_Slave_Read_Write() {
 
+    do { LATAbits.LATA0 = 0; } while(0);
+    do { LATAbits.LATA1 = 0; } while(0);
+    do { LATAbits.LATA2 = 0; } while(0);
+    do { LATAbits.LATA3 = 0; } while(0);
+    do { LATAbits.LATA4 = 0; } while(0);
+    do { LATAbits.LATA5 = 0; } while(0);
+    do { LATAbits.LATA6 = 0; } while(0);
+
+
     do { LATAbits.LATA7 = 1; } while(0);
 
     if (SSPIF) {
+
         SSPIF = 0;
+
         if (SSPOV || WCOL) {
             SSPOV = 0;
             WCOL = 0;
@@ -5807,15 +5819,20 @@ void __attribute__((picinterrupt(("")))) I2C_Slave_Read_Write() {
 
         } else if (!D_nA && R_nW)
         {
-             do { LATAbits.LATA5 = 1; } while(0);
+            do { LATAbits.LATA5 = 1; } while(0);
             unsigned char temp = SSPBUF;
-            SSPBUF = 0x55;
+
+            if(ordre == 25){
+
+                SSPBUF = 0x55;
+            }
             CKP = 1;
 
         } else if (D_nA && !R_nW)
         {
             do { LATAbits.LATA4 = 1; } while(0);
             unsigned char temp = SSPBUF;
+
             CKP = 1;
             if (temp == 88) {
 
@@ -5824,6 +5841,12 @@ void __attribute__((picinterrupt(("")))) I2C_Slave_Read_Write() {
 
             if (temp == 77) {
 
+                do { LATAbits.LATA1 = 1; } while(0);
+            }
+
+            if (temp == 25) {
+
+                ordre = 25;
                 do { LATAbits.LATA1 = 1; } while(0);
             }
 
@@ -5831,19 +5854,27 @@ void __attribute__((picinterrupt(("")))) I2C_Slave_Read_Write() {
         {
             do { LATAbits.LATA2 = 1; } while(0);
             unsigned char temp = SSPBUF;
+
             CKP = 1;
             if (temp == 88) {
 
                 do { LATAbits.LATA0 = 1; } while(0);
-                SSPBUF = 0x55;
-                CKP = 1;
+                SSPBUF = 0x22;
+
             }
 
             if (temp == 77) {
 
                 do { LATAbits.LATA1 = 1; } while(0);
                 SSPBUF = 0x99;
-                CKP = 1;
+
+            }
+
+            if (temp == 25) {
+
+                do { LATAbits.LATA1 = 1; } while(0);
+
+
             }
 
         }
